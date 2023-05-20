@@ -4,7 +4,7 @@ TESTS_DIR=tests/
 .PHONY: test
 
 test:
-	@nvim \
+@nvim \
 		--headless \
 		--noplugin \
 		-u ${TESTS_INIT} \
