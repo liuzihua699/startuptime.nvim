@@ -140,7 +140,8 @@ function! s:get_plugin(fname) abort
     endif
   endfor
 
-  return '[unknown]'
+  " return '[unknown]'
+  return '[user defined]'
 endfunction
 
 
@@ -238,7 +239,7 @@ function! s:get_samples(cmd, count, tmp) abort
 endfunction
 
 
-" vim to lua test function
+
 function startuptime#test() abort
    echo "test statuptime" 
 endfunction
@@ -280,13 +281,17 @@ function! startuptime#profile(...) abort
   let quiet_arg = has('nvim') ? '--headless' : '--not-a-term'
   let args = ' -i NONE --startuptime ' . tmp . ' +qa!'
   if !empty(vimrc)
-    let args = ' -u ' . vimrc . args
+    " let args = ' -u ' . vimrc . args
   endif
+
+  echomsg '286 line args:' args
 
   if !empty(extra_args)
     let args .= ' ' . join(extra_args, ' ')
   endif
 
+  " todo: update logic
+  let exe = 'lvim'
   call system(exe . ' ' . quiet_arg . ' +qa!')
 
   if v:shell_error
