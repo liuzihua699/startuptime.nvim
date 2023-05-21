@@ -1,3 +1,7 @@
+# Startuptime.nvim
+![startuptime](img/screenshot1.jpg)
+
+
 # Getting Started
 Using [lazy.nvim](https://github.com/folke/lazy.nvim) or [lunarvim](https://github.com/LunarVim/LunarVim)
 
